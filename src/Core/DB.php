@@ -6,12 +6,12 @@ class DB {
 
   public function getDB() {
     if(is_null(self::$db))
-      self::$db =new PDO("mysql:host=locaalhost; dbname=php_skills; charset=utf8mb4;", "root", "");
+      self::$db =new PDO("mysql:host=localhost; dbname=php_skills; charset=utf8mb4;", "root", "");
     return self::$db;
   }
 
   public function query($sql, $d) {
-    $row = getDB()->prepare($sql);
+    $row = self::getDB()->prepare($sql);
     try{
       $row->execute($d);
     }catch(\Exception $e) {
@@ -19,15 +19,15 @@ class DB {
     }
   }
 
-  public function fetch($sql, $d) {
-    $row = getDB()->prepare($sql);
+  public static function fetch($sql, $d) {
+    $row = self::getDB()->prepare($sql);
     $row->execute($d);
 
     return $row->fetch();
   }
 
-  public function fetchAll($sql, $d) {
-    $row = getDB()->prepare($sql);
+  public static function fetchAll($sql, $d) {
+    $row = self::getDB()->prepare($sql);
     $row->execute($d);
 
     return $row->fetchAll();
