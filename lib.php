@@ -15,7 +15,7 @@ function alert($t) {
 function move($m, $t = "") {
   if(!empty($t))
     alert($t);
-  script("location.replace('$m");
+  script("location.replace('$m')");
 }
 
 function back($t = "") {

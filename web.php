@@ -2,7 +2,7 @@
 use src\Core\Route;
 
 // Route::reg([
-//   ["get","/@MainController@main"],
+//   ["get","/main@MainController@page/main"],
 // ]);
 
 if(ss()) {
@@ -11,6 +11,7 @@ if(ss()) {
   ]);
 }else {
   Route::reg([
-    ["get","/@MainController@login"],
+    ["get","/@User@login"],
+    ["post","/login@User@loginAction"],
   ]);
 }

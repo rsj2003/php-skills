@@ -1,6 +1,7 @@
 <?php
 namespace src\Core;
 
+
 class Route {
   static $GET = [];
   static $POST = [];
@@ -11,6 +12,7 @@ class Route {
       $v = explode("@", $v);
 
       if($v[0] == $get) {
+        // echo "Route";
         $src = "src\\Controller\\".$v[1];
         $src = new $src();
         $src->{$v[2]}();
