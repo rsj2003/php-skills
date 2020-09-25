@@ -36,5 +36,5 @@ function view($f, $d) {
 }
 
 function ss() {
-  return isset($_SEESION['user']) ? $_SESSION['user'] : false;
+  return isset($_SESSION['user']) ? $_SESSION['user'] : false;
 }

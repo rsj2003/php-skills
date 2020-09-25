@@ -1,7 +1,6 @@
 <?php
 namespace src\Core;
 
-
 class Route {
   static $GET = [];
   static $POST = [];
@@ -19,9 +18,7 @@ class Route {
         exit;
       }
     }
-    // if(ss(){
-      // move("/","이 주소로 접속할 수 없습니다.");
-    // }
+    move("/","이 주소로 접속할 수 없습니다.");
   }
   public static function reg($arr) {
     foreach ($arr as $v) {

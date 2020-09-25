@@ -8,6 +8,7 @@ class DB {
   public function getDB() {
     if(is_null(self::$db))
     self::$db =new \PDO("mysql:host=localhost; dbname=php_skills; charset=utf8mb4;", "root", "");
+    
     return self::$db;
   }
   
@@ -23,7 +24,7 @@ class DB {
   public static function fetch($sql, $d) {
     $row = self::getDB()->prepare($sql);
     $row->execute($d);
-    print_r($row);
+    
     return $row->fetch();
   }
   

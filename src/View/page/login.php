@@ -10,10 +10,10 @@
 <body>
   <div class="center">
     <form action="/login" method="POST" class="login_form">
-      <input type="text" placeholder="아이디" id="id" name="id">
+      <input type="text" placeholder="아이디(이메일)" id="id" name="id">
       <input type="password" placeholder="비밀번호" id="pass" name="pass">
       <input type="submit" value="로그인">
-      <a href="/sign_up">회원가입</a>
+      <a href="/join">회원가입</a>
     </form>
   </div>
 </body>
