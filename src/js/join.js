@@ -41,6 +41,20 @@ window.onload = function(e) {
     if(in_e.value == "" || in_p.value == "" || in_pc.value == "" || in_n.value == "" || in_b.value == "" || in_pf.value == "" || in_c.value == "") {
       this.alert("모든 입력창을 채워주세요.");
     }
+
+    // console.log(in_e.value);
+    // console.log(new RegExp(in_e.value.match(/[A-Z|a-z|0-9]*@[A-Za-z]*((\.[A-Z|a-z]{2,3}) || (\.[A-Za-z]))/g)));
+    // console.log(in_e.value.match(/[A-Z|a-z|0-9]*@[A-Za-z]*((\.[A-Z|a-z]{2,3}) || (\.[A-Za-z]))/g));
+    if(in_e.value.match(/^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[0-9a-zA-Z]{2,3}$/i) === null) {
+      alert("이메일 형식이 잘못되었습니다.");
+      return false;
+    }
+
+    // console.log(in_p.value.match(/^[0-9a-zA-Z]|[!@#$%^&*()]+$/));
+
+    if(in_p.value.match(/^[0-9a-zA-Z]+|[!@#$%^&*()]+$/) == null) {
+      alert("비밀번호 형식이 잘못되었습니다.");
+    }
     
     // email(document.getElementById("id").value);
 
